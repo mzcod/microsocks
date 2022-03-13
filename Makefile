@@ -10,7 +10,7 @@ OBJS = $(SRCS:.c=.o)
 
 LIBS = -lpthread
 
-CFLAGS += -Wall -std=c99
+CC = clang -Ofast -march=native -DCONFIG_LOG=0
 
 INSTALL = ./install.sh
 
