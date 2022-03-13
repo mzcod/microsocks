@@ -132,10 +132,6 @@ static int connect_socks_target(unsigned char *buf, size_t n, struct client *cli
 	struct addrinfo* remote;
 
 	switch(buf[3]) {
-		case 4: /* ipv6 */
-			af = AF_INET6;
-			minlen = 4 + 2 + 16;
-			/* fall through */
 		case 1: /* ipv4 */
 			if(n < minlen) return -EC_GENERAL_FAILURE;
 			if(namebuf != inet_ntop(af, buf+4, namebuf, sizeof namebuf))
